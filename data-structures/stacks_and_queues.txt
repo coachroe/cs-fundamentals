@@ -1,0 +1,84 @@
+1) What is the main difference between a stack and a queue?
+  A: A stack uses a last in first out priority. It adds/removes items to the top of the stack.
+
+  A Queue is first in first out.
+-----
+
+2) What are the similarities between stacks and queues?
+
+They both order data to be ran in the server, just by different methods
+
+-----
+
+3) Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+  A: Undo - Stack using a "pop" command on the most recent item in the stack
+    Redo - Stack using a "push" command to duplicate the most recent item in the stack
+
+-----
+
+1) Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+
+
+var reverse = function(str) {
+    var stack = [];
+    for (var i = 0; i < str.length; i++) {
+        stack.push(str[i]);
+    }
+    var reverseStr = '';
+    while (stack.length > 0) {
+        reverseStr += stack.pop();
+    }
+}
+
+-----
+
+2) Implement the delete functionality of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure.
+
+To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be deleted and returned.
+
+CLASS Stack
+ FUNCTION pop(queue)
+   ...fill in pseudocode here
+ END FUNCTION
+END CLASS
+
+var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
+	for (i=0; i<array.length; i++) {
+  	if (array[i] == array.length -1) {
+    	array.pop(array[i])
+    }
+  }
+alert(array)
+
+-----
+
+3) Fill in the methods for the following Queue class so that it will work as expected (FIFO).
+
+CLASS QUEUE
+ FUNCTION enqueue(element)
+   ...fill in pseudocode here
+ END FUNCTION
+
+ FUNCTION dequeue
+   ...fill in pseudocode here
+ END FUNCTION
+END CLASS
+
+var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
+	for (i=0; i<array.length; i++) {
+  	if (array[i] == array.length) {
+    	array.push(enqueue)
+    }
+  }
+
+var enqueue = "Jim"
+alert(array)
+
+var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
+	for (i=0; i<array.length; i++) {
+  	if (array[i] == array.length -1) {
+    	array.pop(array[i])
+    }
+  }
+alert(array)
