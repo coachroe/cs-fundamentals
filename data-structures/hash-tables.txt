@@ -1,0 +1,65 @@
+1) What is a hash table?
+  A: A key-value pair data structure that handles data similar to JS objects
+
+-----
+
+2) What is hashing?
+  A: The conversion from a string to a numerical number.  This number is a fixed length hash code.
+
+-----
+
+3) How does a hash table store data?
+  A: By converting the hash code to an array index and storing the value in that array index.
+
+-----
+
+4) How are hash tables and objects different?
+  A: Hash tables and objects are different in purpose.  Hash tables are used to store data that has an identifier.  Objects hold potentially different types of data bundled together.
+
+-----
+
+5) Determine whether you would use a hash table or an object to store each of the following pieces of data:
+    * A list of pets and their unique names. [Unclear on question, if asking about just a list of names then hash is better, if storing pet type and name then object would be better]
+    * The name, age, and the birthday of your best friend. [Object]
+    * The name and location of every company in a given city. [Hash]
+    * All of the books checked out from a library by a particular individual. [Hash]
+    * The primary and secondary phone numbers for a contact. [Object]
+
+-----
+
+6) Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers. Store this information in a hash table.
+  A:
+
+  var arr = new Map([
+   ['5555555555', 'Bob Jones, 123 Address Way, 5555555555'],
+   ['4444444444', 'Mike Smith, 234 Dif Address, 4444444444'],
+   ['3333333333', 'John Doe, 345 Main Street , 3333333333'],
+]);
+var searchPhone = arr.get('5555555555');
+alert(searchPhone);
+
+
+-----
+
+7) Build a system that allows a store owner to track their store's inventory using a hash table for storage.
+  A:
+  var arr = new Map([
+     ['1', 'Table, Wood, 25'],
+     ['2', 'Chair, Metal, 3'],
+     ['3', 'Mirror, Metal , 2'],
+  ]);
+  var searchInventory = arr.get('1');
+  alert(searchInventory);
+
+
+-----
+
+8) Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date. Use hash tables to store the necessary data.
+
+var arr = new Map([
+ ['1', 'NY Times, 2018-02-25'],
+ ['2', 'Chicago Tribune, 2018-02-25'],
+ ['3', 'Some Journal, 2018-02-25'],
+]);
+var searchPaper = arr.get('1');
+alert(searchPaper); 
