@@ -1,0 +1,69 @@
+1) Using proper pseudo-code, describe the following primitive algorithms:
+- Making coffee;
+  function makeCoffee(coffeeType, potSize, water) {
+    SELECT coffeeTYPE
+    SELECT potSize
+    SET water = potSize * (0.9)
+    SET coffeeSize = potSize * (0.1)
+    INSERT water INTO pot
+    INSERT coffeeSize INTO pot
+    WHILE coffeeSize + water = potSize {
+      brewCoffee
+    }
+    END WHILE
+  END FUNCTION
+  }
+
+- Washing dishes;
+  function washDishes(dish) {
+    SET dishes to dirty
+    WHILE dishes == dirty {
+      SELECT dish
+      washDish(dish)
+      INSERT dish INTO dryingRack
+      WHEN dish < 1
+    }
+    END WHILE
+    SET dishes to clean
+  END FUNCTION
+  }
+
+- A choice of your own
+  - Make PB&J Sandwich
+  function makePBJ(peanutButter, jelly, bread1, bread2, plate) {
+    SELECT peanutButter
+    SELECT jelly
+    SELECT bread1
+    SELECT bread2
+    SELECT plate
+    INSERT bread1 INTO plate
+    INSERT peanutButter INTO bread1
+    INSERT jelly INTO bread1
+    INSERT bread2 INTO bread1
+  END FUNCTION
+  }
+
+
+-----
+
+2) As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation.
+Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product).
+Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+  A: 1) NCSA Athletic Recruiting - The company I work for, we have a matching algo that matches high school athletes with college sport programs
+    2) Tesla - Pretty obvious here, but the ability to upgrade your car has set them apart
+    3) FanGraphs - Sabermetric website for baseball with some proprietary formulas and algorithms have made them a trusted source in their world
+
+-----
+
+3) Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+  A: Efficient
+      - Fast
+      - Minimal resource usage (RAM)
+      - If public, low transmission size
+
+    Inefficient
+      - Slow
+      - maximum resource usage
+      - large transmission size
