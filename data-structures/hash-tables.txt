@@ -29,14 +29,45 @@
 
 6) Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers. Store this information in a hash table.
   A:
+HTML
+<div id="phonebook">
+<input id="name" placeholder="Full Name"/>
+<input id="address" placeholder="Address"/>
+<input id="number" placeholder="Number"/>
+<button id="addContact">Add Contact</button>
+</div>
 
-  var arr = new Map([
-   ['5555555555', 'Bob Jones, 123 Address Way, 5555555555'],
-   ['4444444444', 'Mike Smith, 234 Dif Address, 4444444444'],
-   ['3333333333', 'John Doe, 345 Main Street , 3333333333'],
+<div>
+<input id="searchNumber" placeholder="Enter Number"/>
+<button id="search">Search</button>
+</div>
+
+JS
+
+var arr = new Map([
+  ['5555555555', 'Bob Jones, 123 Address Way, 5555555555'],
+  ['4444444444', 'Mike Smith, 234 Dif Address, 4444444444'],
+  ['3333333333', 'John Doe, 345 Main Street , 3333333333'],
 ]);
-var searchPhone = arr.get('5555555555');
-alert(searchPhone);
+var searchPhone = arr.get(document.getElementById('search').value);
+  alert(searchPhone);
+
+
+var addPhone = function() {
+	var name = document.getElementById('name').value;
+  var address = document.getElementById('address').value;
+  var number = document.getElementById('number').value;
+	var info = name + ", " + address + ", " + number;
+  return arr.set(number, info)
+}
+
+var addContactBtn = document.getElementById('addContact');
+addContactBtn.addEventListener('click',addContact,false);
+update();
+
+var searchPhonebook = document.getElementById('addContact');
+searchPhonebook.addEventListener('click',search,false);
+update();
 
 
 -----
@@ -62,4 +93,4 @@ var arr = new Map([
  ['3', 'Some Journal, 2018-02-25'],
 ]);
 var searchPaper = arr.get('1');
-alert(searchPaper); 
+alert(searchPaper);
