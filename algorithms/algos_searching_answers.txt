@@ -1,0 +1,65 @@
+## Short Answer ##
+1) What is a real-life scenario that uses linear search?
+  A: Finding a specific card in an unsorted deck of cards
+
+-----
+
+2) What is a real-life scenario that uses binary search?
+  A: Finding a specific card in a sorted deck of cards
+
+-----
+
+3) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+  A: 7
+-----
+
+4) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+  A: 1 (since G is max value)
+-----
+
+5) Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+  A: Linear since it is unsorted, unless you have the ability to sort it before searching
+
+-----
+
+6) Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+  A: Binary - both would work but Binary is much faster and capable since it is a sorted colleciton
+-----
+
+## Programming Assignment ##
+
+1) You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+  function searchDictionary(arr, word) {
+    var lowIndex = 0;
+    var highIndex = arr.length - 1;
+    while (lowIndex <= highIndex) {
+      var midIndex = Math.floor((lowIndex + highIndex) / 2);
+      if (arr[midIndex] == word) {
+        return word + " at index " + midIndex;
+      } else if (arr[midIndex] < word) {
+        lowIndex = midIndex + 1;
+      } else {
+        highIndex = midIndex - 1;
+      }
+    } return "Not in Dictionary";
+  }
+
+  var dictionary = ["Aardvark", "Albatross", "Birdie", "Bogey", "Eagle"];
+  alert(searchDictionary(dictionary, "Albatross"))
+
+-----
+
+2) You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+function findFish(arr, fish){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === fish) {
+      return "fish at index " + i;
+    }
+  }
+  return -1;
+}
+
+var fishSchool = ["no spots", "no spots", "no spots", "no spots", "spotted", "no spots", "no spots", "no spots"];
+alert(findFish(fishSchool, "spotted"))
