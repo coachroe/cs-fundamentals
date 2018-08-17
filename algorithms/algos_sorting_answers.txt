@@ -1,0 +1,55 @@
+1) Write pseudocode for bubble sort.
+
+  FUNCTION bubbleSort(collection)
+    REPEAT
+      SET swapped to false
+      FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+        IF collection[i] > collection[i + 1] THEN
+          SET tmp to collection[i]
+          SET collection[i] to collection[i + 1]
+          SET collection[i + 1] to tmp
+          SET swapped to true
+        END IF
+      END FOR
+    UNTIL swapped is FALSE
+
+    RETURN collection
+  END FUNCTION
+
+-----
+
+2) Write pseudocode for quicksort.
+
+  FUNCTION quickSort(collection, a, b)
+    IF a < b
+      c = papartition (collection, a, b)
+      quickSort(collection, a, c-1)
+      quickSort(collection, c+1, b)
+    END IF
+  END FUNCTION
+
+
+  FUNCTION partition (collection, a, b)
+    SET pivot to collection[b]
+    SET i to collection[a - 1]
+    FOR j = FIRST INDEX of collection to LAST INDEX of collection - 1
+      IF collection[j] < pivot
+        SET collection[i] to collection[i + 1]
+        SET swapped to true
+      END IF
+    END FOR
+
+    RETURN collection
+  END FUNCTION
+
+-----
+
+3) We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+  A: Merge Sort and Quick Sort are more efficient because they divide the sort into smaller chunks and don't force you to iterate over every item in the collection multiple times.
+  Merge and Quick Sort are both O(n log(n)) algorithms while most of the rest are O(n^2) complexity
+
+-----
+
+4) All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+  A: Bucket sort distributes the collection into different buckets.  It then sorts each bucket before re-introducing the bucket back into an array and running another sort (not necessarily, but possibly bucket) over the new array.
+  The ideal input is a fairly evenly distributed collection so each bucket is doing a similar amount of work to sort.

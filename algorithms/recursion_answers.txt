@@ -17,7 +17,7 @@
 
 3) When should you use recursion, and when should you avoid recursion? Give examples for each.
   A: Use recursion - when using a combination of sub results (i.e. factorial)
-  Avoid recursion - when passign over a collection and doing the same thing (i.e. finding the maximum)
+  Avoid recursion - when passing over a collection and doing the same thing (i.e. finding the maximum)
 
 -----
 
@@ -28,7 +28,7 @@
 
   maximum
     similar: both get to end result, that's about it
-    different: iterative is cleaner and likely faster since just iterating over a colelction
+    different: iterative is cleaner and likely faster since just iterating over a collection
 
   fibonacci
     similar: both get to end result, that's about it
