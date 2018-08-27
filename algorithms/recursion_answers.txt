@@ -40,11 +40,17 @@
 
 function countItems(arr){
   if(arr.length) {
-    return 1 + countItems(arr.slice(1))
+    if(typeof arr[0] === "object"){
+      return countItems(arr[0]) + countItems(arr.slice(1));
+    } else {
+      return 1 + countItems(arr.slice(1));
+    }
   } else {
     return 0;
   }
 }
+
+alert(countItems([[1,2,3],[4],[5,6]]))
 
 -----
 
