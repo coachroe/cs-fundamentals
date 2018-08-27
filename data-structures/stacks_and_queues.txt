@@ -39,17 +39,12 @@ To delete an item, take all of the elements in the queue one at a time and put t
 
 CLASS Stack
  FUNCTION pop(queue)
-   ...fill in pseudocode here
+    SET the element at the stack position index to temp
+    DECREMENT the stack position index by 1
+    RETURN temp
  END FUNCTION
 END CLASS
 
-var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
-	for (i=0; i<array.length; i++) {
-  	if (array[i] == array.length -1) {
-    	array.pop(array[i])
-    }
-  }
-alert(array)
 
 -----
 
@@ -57,28 +52,12 @@ alert(array)
 
 CLASS QUEUE
  FUNCTION enqueue(element)
-   ...fill in pseudocode here
+   APPEND element to the end of the list
  END FUNCTION
 
  FUNCTION dequeue
-   ...fill in pseudocode here
+  SET temp to the first element
+  REMOVE FIRST element of list from list
+  RETURN temp
  END FUNCTION
 END CLASS
-
-var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
-	for (i=0; i<array.length; i++) {
-  	if (array[i] == array.length) {
-    	array.push(enqueue)
-    }
-  }
-
-var enqueue = "Jim"
-alert(array)
-
-var array = ["Vivian", "Ava", "Josh", "Patrick", "Mike"], i;
-	for (i=0; i<array.length; i++) {
-  	if (array[i] == array.length -1) {
-    	array.pop(array[i])
-    }
-  }
-alert(array)
