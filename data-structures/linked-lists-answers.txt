@@ -25,36 +25,36 @@ The keypads were built in the 80's and only had 8mb of memory to use.  To add ne
 1) The Linked List push function should take a value, create a node, and add it to the end of a list. Below is a push function for a singly linked list. However, there is something wrong with it. Find the bug and fix the code.
 
 -- Original --
-LinkedList.prototype.push = function(element) {
- SET node = {
-   value: element,
-   next: null
- }
+FUNCTION push(element)
+CREATE node
+SET node.value TO element
+SET node.next TO null
 
- IF the head node does not exist
-   THEN SET head to node
- ELSE
-   SET current node to head
-   SET current.next to node
- }
-}
+IF the head node does not exist
+ THEN SET head to node
+ELSE
+ SET current to head
+ SET current.next to node
+END IF
+END FUNCTION
 
 -- Updated --
 
-LinkedList.prototype.push = function(headNode, element) {
- SET node = {
-   value: element,
-   head: headNode
-   next: null
- }
+FUNCTION push(headNode, element)
+CREATE node
+SET node.value TO element
+SET node.head TO headNode
+SET node.next TO null
 
- IF the head node does not exist
-   THEN SET head to node
- ELSE
-   SET current node to head
-   SET current.next to node
- }
-}
+IF the head node does not exist
+ THEN SET head to node
+ELSE
+ SET current to head
+ SET current.next to node
+END IF
+END FUNCTION
+
+Wasn't passing in the headNode value or setting it upon node creation
 
 
 -----
@@ -120,26 +120,29 @@ class LinkedList {
     addToHead(value) {
         const newNode = { value };
         newNode.next = this.head;
-        this.head = newNode;       
+        this.head = newNode;
         this.length++;
         return this;
     }
 }
 
 const list = new LinkedList('a')
+    .addToHead('b')
     .addToHead('c')
-    .addToHead('d')
-    .addToHead('d')
-    .addToHead('a');
+    .addToHead('d');
 
 
-const reverseLinkedList = (cur, prev) => {
-    if (cur.next) {
-        const newHead = reverseLinkedList(cur.next, cur);
-        cur.next = prev;
-        return newHead;
-    }
+var reverseLinkedList = function(list) {
+  var node = list;
+  var previous = null;
 
-    cur.next = prev;
-    return cur;
-};
+  while(node) {
+    var save = node.next;
+    node.next = previous;
+    previous = node;
+    node = save;
+  }
+  return previous;
+}
+
+alert(reverseLinkedList(list))
